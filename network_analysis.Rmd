@@ -44,7 +44,7 @@ Install the STRING app from https://apps.cytoscape.org/apps/stringapp, available
 
 **Load the libraries on R**
 
-```{r}
+```{r, message=FALSE}
 library(igraph)
 library(RCy3)
 ```
@@ -59,7 +59,7 @@ cytoscapePing()
 
 There are different ways to create random data, such as by reading network data from files (edgelist, matrix), or by using functions, such as sample_gnp(), sample_gnm(), make_graph(), and graph_from_literal().
 
-I used stringApp for the given task. I extracted 200 nodes that have a connection to TP53 protein.
+I used stringApp for the given task. I extracted 199 nodes that have a connection to TP53 protein.
 
 ```{r}
 set.seed(135)

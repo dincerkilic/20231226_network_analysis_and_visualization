@@ -50,20 +50,6 @@ databases into Cytoscape.
 
 ``` r
 library(igraph)
-```
-
-    ## 
-    ## Attaching package: 'igraph'
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     decompose, spectrum
-
-    ## The following object is masked from 'package:base':
-    ## 
-    ##     union
-
-``` r
 library(RCy3)
 ```
 
@@ -81,7 +67,7 @@ There are different ways to create random data, such as by reading
 network data from files (edgelist, matrix), or by using functions, such
 as sample_gnp(), sample_gnm(), make_graph(), and graph_from_literal().
 
-I used stringApp for the given task. I extracted 200 nodes that have a
+I used stringApp for the given task. I extracted 199 nodes that have a
 connection to TP53 protein.
 
 ``` r
@@ -90,7 +76,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 3' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 6' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -188,7 +174,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 6cefb1f:
+    ## + 1/200 vertex, named, from 99370b2:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
