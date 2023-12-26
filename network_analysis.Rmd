@@ -1,0 +1,200 @@
+---
+title: "Network Analysis and Visualization with R, igraph, and  Cytoscape"
+author: Dinçer Kılıç
+date: 2023-12-26
+output: github_document
+---
+
+# Objective
+
+The aim is to make network analysis with random 200 nodes.
+
+# Analysis
+
+**Prerequisites**
+
+First you need to set up your R environment. Install the required R packages, which are igraph and RCy3.
+
+**igraph** is collection of network analysis tools.
+
+**RCy3** allows communication between R and Cytoscape.
+
+```{r, eval=FALSE}
+if(!"RCy3" %in% installed.packages()){
+  install.packages("BiocManager")
+  BiocManager::install("RCy3")
+}
+
+if(!"igraph" %in% installed.packages()){
+  install.packages("BiocManager")
+  BiocManager::install("igraph")
+}
+```
+
+
+In addition to these packages (RCy3, igraph), you will need: Cytoscape, which can be downloaded from http://www.cytoscape.org/download.php.
+
+There is also need for the STRING app to access the STRING database from within Cytoscape.
+
+Install the STRING app from https://apps.cytoscape.org/apps/stringapp, available in Cytoscape 3.7.0.  
+
+**Cytoscape** allows visualization and exploration of biological networks.
+
+**stringApp** imports functional associations or physical interactions between protein-protein and protein-chemical pairs from several databases into Cytoscape.
+
+**Load the libraries on R**
+
+```{r}
+library(igraph)
+library(RCy3)
+```
+
+**Make sure to launch Cytoscape, and now connect R to Cytoscape**
+
+```{r}
+cytoscapePing()
+```
+
+**Create data** 
+
+There are different ways to create random data, such as by reading network data from files (edgelist, matrix), or by using functions, such as sample_gnp(), sample_gnm(), make_graph(), and graph_from_literal().
+
+I used stringApp for the given task. I extracted 200 nodes that have a connection to TP53 protein.
+
+```{r}
+set.seed(135)
+cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=200'
+commandsRun(cmd.string)
+```
+
+
+**Transfer data**
+
+The script above has created network available on Cytoscape. Rename it on Cytopscape as "TP53", and transfer it from Cytoscape to R for the rest of the analysis.
+
+```{r}
+network <- createIgraphFromNetwork("TP53")
+```
+
+**Decide the layout**
+
+```{r}
+# A list of available layouts
+getLayoutNames()
+
+# Select the “force-directed” layout. To see properties for the given layout, use:
+getLayoutPropertyNames("force-directed") 
+layoutNetwork('force-directed defaultSpringLength=70 defaultSpringCoefficient=0.000003')
+```
+
+**Verify the attributes of network**
+
+```{r, eval=FALSE}
+# The number of vertices and edges
+igraph::vcount(network)
+igraph::ecount(network)
+
+# The names of vertices and edges
+V(network)
+E(network)
+```
+
+**Mean distance**
+
+```{r}
+mean_distance(network, directed = FALSE)
+```
+
+**Diameter**
+
+The shortest distance between the two most distant nodes in the network.
+
+Protein-protein interaction networks show a small world effect meaning that there is great connectivity between proteins. 
+
+In other words, it can be said that the network's diameter (the maximum number of steps separating any two nodes) is small, no matter how big the network is.
+
+```{r}
+diameter(network)
+```
+
+**Distances** 
+
+It calculates the distance between all pairs of vertices and returns the results as a distance matrix.
+
+```{r, eval=FALSE}
+distances(network, mode = "all")
+```
+
+**Articulation point**
+
+Removal of this point would destroy the whole network.
+```{r}
+articulation.points(network)
+```
+
+**Degree centrality and degree distribution**
+
+```{r}
+deg <- degree(network, mode="all")
+hist(deg, breaks=1:vcount(network)-1, 
+     main="Histogram of Node Degree",
+     xlab = "Degree")
+
+```
+
+**Betweennes centrality**
+
+Betweenness centrality captures which nodes are important in the flow of the network. It makes use of the shortest paths in the network. Betweenness effectively counts how many shortest paths each node is on. This divided by the total number of shortest paths.
+
+The higher a node’s betweenness, the more important they are for the efficient flow of goods in a network.
+
+```{r}
+bet <- betweenness(network)
+bet[which.max(bet)]
+```
+
+**Closeness centrality**
+
+Make use of the shortest paths between nodes. Calculated as;
+
+1/sum geodesic distance
+
+1/sum length shortest path
+
+```{r}
+clo <- closeness(network, normalized = T)
+clo[which.max(clo)]
+```
+
+**Save the session and export**
+
+```{r,  eval=FALSE}
+full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
+saveSession(full.path) #.cys
+
+```
+
+**Save image files with high resolution**
+
+```{r,  eval=FALSE}
+full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
+exportImage(full.path, 'PNG', zoom=500) #.png scaled by 200%
+exportImage(full.path, 'PDF') #.pdf
+```
+
+# Results
+
+
+![Network analysis with random 200 nodes. Proteins are colored with yellow](out/random_network_with_200_nodes.png)
+**Fig.1** Network analysis with 200 random nodes is presented. Proteins are colored with yellow.
+
+As a result of analysis, we have a typical example for protein-protein interaction network (PPIN).
+
+**Track versions for records**
+
+```{r}
+cytoscapeVersionInfo()
+sessionInfo()
+```
+
+
