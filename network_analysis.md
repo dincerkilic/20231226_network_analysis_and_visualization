@@ -90,7 +90,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 48' with 201 nodes and 1238 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 1' with 201 nodes and 1238 edges"
 
 **Transfer data**
 
@@ -188,7 +188,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/201 vertex, named, from 0473d0f:
+    ## + 1/201 vertex, named, from bccfce6:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -256,7 +256,7 @@ exportImage(full.path, 'PDF') #.pdf
 ![](out/random_network_with_200_nodes.png)
 
 **Fig.1** Network analysis with 200 random nodes is presented. Proteins
-are colored with yellow.
+are colored in yellow.
 
 As a result of analysis, we have a typical example for protein-protein
 interaction network (PPIN).
