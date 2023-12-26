@@ -183,9 +183,8 @@ exportImage(full.path, 'PDF') #.pdf
 ```
 
 # Results
+![](out/random_network_with_200_nodes.png)
 
-
-![Network analysis with random 200 nodes. Proteins are colored with yellow](out/random_network_with_200_nodes.png)
 **Fig.1** Network analysis with 200 random nodes is presented. Proteins are colored with yellow.
 
 As a result of analysis, we have a typical example for protein-protein interaction network (PPIN).
