@@ -86,11 +86,11 @@ connection to TP53 protein.
 
 ``` r
 set.seed(135)
-cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=200'
+cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=199'
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 1' with 201 nodes and 1238 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 2' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -152,7 +152,7 @@ E(network)
 mean_distance(network, directed = FALSE)
 ```
 
-    ## [1] 1.938408
+    ## [1] 1.938342
 
 **Diameter**
 
@@ -188,7 +188,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/201 vertex, named, from bccfce6:
+    ## + 1/200 vertex, named, from abc5dbf:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -218,7 +218,7 @@ bet[which.max(bet)]
 ```
 
     ## 9606.ENSP00000269305 
-    ##             6587.654
+    ##             6540.154
 
 **Closeness centrality**
 
@@ -255,8 +255,8 @@ exportImage(full.path, 'PDF') #.pdf
 
 ![](out/random_network_with_200_nodes.png)
 
-**Fig.1** Network analysis with 200 random nodes is presented. Proteins
-are colored in yellow.
+**Fig.1** Network analysis with 200 random nodes is presented. TP53
+colored in red and other proteins are in yellow.
 
 As a result of analysis, we have a typical example for protein-protein
 interaction network (PPIN).

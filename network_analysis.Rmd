@@ -63,7 +63,7 @@ I used stringApp for the given task. I extracted 200 nodes that have a connectio
 
 ```{r}
 set.seed(135)
-cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=200'
+cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=199'
 commandsRun(cmd.string)
 ```
 
@@ -185,7 +185,7 @@ exportImage(full.path, 'PDF') #.pdf
 # Results
 ![](out/random_network_with_200_nodes.png)
 
-**Fig.1** Network analysis with 200 random nodes is presented. Proteins are colored in yellow.
+**Fig.1** Network analysis with 200 random nodes is presented. TP53 colored in red and other proteins are in yellow.
 
 As a result of analysis, we have a typical example for protein-protein interaction network (PPIN).
 

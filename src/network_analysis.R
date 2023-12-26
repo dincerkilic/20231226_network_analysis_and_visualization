@@ -27,7 +27,7 @@ cytoscapePing()
 
 # Create data 
 set.seed(135)
-cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=200'
+cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=199'
 commandsRun(cmd.string)
 
 # Transfer network from Cytoscape to R after renaming it on Cytoscape
