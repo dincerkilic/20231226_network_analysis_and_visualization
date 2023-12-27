@@ -75,7 +75,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 3' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 4' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -163,7 +163,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 3602cee:
+    ## + 1/200 vertex, named, from 4eb0edc:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
