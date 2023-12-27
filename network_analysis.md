@@ -5,7 +5,7 @@ Dinçer Kılıç
 
 # Objective
 
-The aim is to make network analysis with random 200 nodes.
+The aim is to make a network analysis with 200 random nodes.
 
 # Analysis
 
@@ -14,7 +14,7 @@ The aim is to make network analysis with random 200 nodes.
 First you need to set up your R environment. Install the required R
 packages, which are igraph and RCy3.
 
-**igraph** is collection of network analysis tools.
+**igraph** is a collection of network analysis tools.
 
 **RCy3** allows communication between R and Cytoscape.
 
@@ -30,11 +30,11 @@ if(!"igraph" %in% installed.packages()){
 }
 ```
 
-In addition to these packages (RCy3, igraph), you will need: Cytoscape,
+In addition to these packages (RCy3, igraph), you will need Cytoscape,
 which can be downloaded from <http://www.cytoscape.org/download.php>.
 
-There is also need for the STRING app to access the STRING database from
-within Cytoscape.
+There is also a need for the STRING app to access the STRING database
+from within Cytoscape.
 
 Install the STRING app from <https://apps.cytoscape.org/apps/stringapp>,
 available in Cytoscape 3.7.0.
@@ -68,7 +68,7 @@ network data from files (edgelist, matrix), or by using functions, such
 as sample_gnp(), sample_gnm(), make_graph(), and graph_from_literal().
 
 I used stringApp for the given task. I extracted 199 nodes that have a
-connection to TP53 protein.
+connection to the TP53 protein.
 
 ``` r
 set.seed(135)
@@ -76,11 +76,11 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 7' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 1' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
-The script above has created network available on Cytoscape. Rename it
+The script above has created a network available on Cytoscape. Rename it
 on Cytopscape as “TP53”, and transfer it from Cytoscape to R for the
 rest of the analysis.
 
@@ -174,7 +174,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from ce4559f:
+    ## + 1/200 vertex, named, from 1681518:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -193,7 +193,7 @@ hist(deg, breaks=1:vcount(network)-1,
 Betweenness centrality captures which nodes are important in the flow of
 the network. It makes use of the shortest paths in the network.
 Betweenness effectively counts how many shortest paths each node is on.
-This divided by the total number of shortest paths.
+This is divided by the total number of shortest paths.
 
 The higher a node’s betweenness, the more important they are for the
 efficient flow of goods in a network.
@@ -244,8 +244,8 @@ exportImage(full.path, 'PDF') #.pdf
 **Fig.1** Network analysis with 200 random nodes is presented. TP53 is
 colored in red and other proteins are in yellow.
 
-As a result of analysis, we have a typical example for protein-protein
-interaction network (PPIN).
+As a result of the analysis, we have a typical example of a
+protein-protein interaction network (PPIN).
 
 **Track versions for records**
 
