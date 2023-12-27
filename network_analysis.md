@@ -36,8 +36,7 @@ which can be downloaded from <http://www.cytoscape.org/download.php>.
 There is also a need for the STRING app to access the STRING database
 from within Cytoscape.
 
-Install the STRING app from <https://apps.cytoscape.org/apps/stringapp>,
-available in Cytoscape 3.7.0.
+Install the STRING app from <https://apps.cytoscape.org/apps/stringapp>.
 
 **Cytoscape** allows visualization and exploration of biological
 networks.
@@ -76,7 +75,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 1' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 3' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -132,24 +131,14 @@ V(network)
 E(network)
 ```
 
-**Mean distance**
-
-``` r
-mean_distance(network, directed = FALSE)
-```
-
-    ## [1] 1.938342
-
 **Diameter**
 
 The shortest distance between the two most distant nodes in the network.
 
 Protein-protein interaction networks show a small world effect meaning
-that there is great connectivity between proteins.
-
-In other words, it can be said that the network’s diameter (the maximum
-number of steps separating any two nodes) is small, no matter how big
-the network is.
+that there is great connectivity between proteins. In other words, it
+can be said that the network’s diameter (the maximum number of steps
+separating any two nodes) is small, no matter how big the network is.
 
 ``` r
 diameter(network)
@@ -174,10 +163,12 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 1681518:
+    ## + 1/200 vertex, named, from 3602cee:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
+
+The degree tells us the number of edges that connect to a node.
 
 ``` r
 deg <- degree(network, mode="all")
@@ -186,14 +177,13 @@ hist(deg, breaks=1:vcount(network)-1,
      xlab = "Degree")
 ```
 
-![](network_analysis_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](network_analysis_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 **Betweennes centrality**
 
 Betweenness centrality captures which nodes are important in the flow of
-the network. It makes use of the shortest paths in the network.
-Betweenness effectively counts how many shortest paths each node is on.
-This is divided by the total number of shortest paths.
+the network. Betweenness effectively counts how many shortest paths each
+node is on then divides it by the total number of shortest paths.
 
 The higher a node’s betweenness, the more important they are for the
 efficient flow of goods in a network.
@@ -210,9 +200,11 @@ bet[which.max(bet)]
 
 Make use of the shortest paths between nodes. Calculated as;
 
-1/sum geodesic distance
+N-1/sum geodesic distance of a given node
 
-1/sum length shortest path
+N-1/sum length of shortest paths which a given node is on
+
+N: the number of nodes
 
 ``` r
 clo <- closeness(network, normalized = T)
