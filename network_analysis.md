@@ -75,7 +75,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 6' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 7' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -116,7 +116,7 @@ getLayoutPropertyNames("force-directed")
     ## [13] "singlePartition"          "type"
 
 ``` r
-layoutNetwork('force-directed defaultSpringLength=70 defaultSpringCoefficient=0.000003')
+layoutNetwork('force-directed')
 ```
 
 **Verify the attributes of network**
@@ -163,7 +163,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 2f053a7:
+    ## + 1/200 vertex, named, from fcb4695:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
