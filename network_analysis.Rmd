@@ -131,6 +131,7 @@ The degree tells us the number of edges that connect to a node.
 ```{r}
 deg <- degree(network, mode="all")
 hist(deg, breaks=1:vcount(network)-1, 
+     ylim = range(pretty(c(0,table(deg)))),
      main="Histogram of Node Degree",
      xlab = "Degree")
 

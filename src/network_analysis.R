@@ -66,7 +66,9 @@ ENSP00000269305(TP53)
 
 # Degree distribution
 deg <- degree(network, mode="all")
-hist(deg, breaks=1:vcount(network)-1, main="Histogram of Node Degree",
+hist(deg, breaks=1:vcount(network)-1, 
+     ylim = range(pretty(c(0,table(deg)))),
+     main="Histogram of Node Degree",
      xlab = "Degree")
 
 # Betweennes centrality
