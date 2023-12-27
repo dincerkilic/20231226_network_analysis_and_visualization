@@ -57,7 +57,7 @@ mean_distance(network, directed = FALSE)
 diameter(network)
 
 # Distances 
-dist <- distances(network, mode = "all")
+dist <- distances(network)
 
 # Articulation point
 ## Removal of this point would destroy the whole network
@@ -87,7 +87,7 @@ saveSession(full.path) #.cys
 
 # Save image files with high resolution
 full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
-exportImage(full.path, 'PNG', zoom=500) #.png scaled by 200%
+exportImage(full.path, 'PNG', zoom=500) #.png scaled by 500%
 exportImage(full.path, 'PDF') #.pdf
 
 # Track versions for records

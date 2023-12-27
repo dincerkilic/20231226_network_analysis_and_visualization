@@ -114,7 +114,7 @@ diameter(network)
 It calculates the distance between all pairs of vertices and returns the results as a distance matrix.
 
 ```{r, eval=FALSE}
-distances(network, mode = "all")
+distances(network)
 ```
 
 **Articulation point**
@@ -174,7 +174,7 @@ saveSession(full.path) #.cys
 
 ```{r,  eval=FALSE}
 full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
-exportImage(full.path, 'PNG', zoom=500) #.png scaled by 200%
+exportImage(full.path, 'PNG', zoom=500) #.png scaled by 500%
 exportImage(full.path, 'PDF') #.pdf
 ```
 

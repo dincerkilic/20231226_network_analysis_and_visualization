@@ -75,7 +75,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 4' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 5' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -152,7 +152,7 @@ It calculates the distance between all pairs of vertices and returns the
 results as a distance matrix.
 
 ``` r
-distances(network, mode = "all")
+distances(network)
 ```
 
 **Articulation point**
@@ -163,7 +163,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 4eb0edc:
+    ## + 1/200 vertex, named, from 302ad71:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -225,7 +225,7 @@ saveSession(full.path) #.cys
 
 ``` r
 full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
-exportImage(full.path, 'PNG', zoom=500) #.png scaled by 200%
+exportImage(full.path, 'PNG', zoom=500) #.png scaled by 500%
 exportImage(full.path, 'PDF') #.pdf
 ```
 
