@@ -49,10 +49,6 @@ igraph::ecount(network)
 V(network)
 E(network)
 
-# Mean distance
-mean_distance(network, directed = FALSE)
-[1] 1.938408
-
 # Diameter
 diameter(network)
 
@@ -62,7 +58,6 @@ dist <- distances(network)
 # Articulation point
 ## Removal of this point would destroy the whole network
 articulation.points(network)
-ENSP00000269305(TP53)
 
 # Degree distribution
 deg <- degree(network, mode="all")
@@ -73,15 +68,11 @@ hist(deg, breaks=1:vcount(network)-1,
 
 # Betweennes centrality
 bet <- betweenness(network)
-
 bet[which.max(bet)]
-ENSP00000269305(TP53)
 
 # Closeness centrality
 clo <- closeness(network, normalized = T)
-
 clo[which.max(clo)]
-ENSP00000269305(TP53)
 
 # Save the session and export
 full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
