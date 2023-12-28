@@ -75,7 +75,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 13' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 14' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -144,11 +144,6 @@ E(network)
 
 The shortest distance between the two most distant nodes in the network.
 
-Protein-protein interaction networks show a small world effect meaning
-that there is great connectivity between proteins. In other words, it
-can be said that the network’s diameter (the maximum number of steps
-separating any two nodes) is small, no matter how big the network is.
-
 ``` r
 diameter(network)
 ```
@@ -172,7 +167,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 9c71a61:
+    ## + 1/200 vertex, named, from b8b5957:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
