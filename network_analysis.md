@@ -75,7 +75,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 7' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 8' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -116,7 +116,7 @@ getLayoutPropertyNames("force-directed")
     ## [13] "singlePartition"          "type"
 
 ``` r
-layoutNetwork('force-directed')
+layoutNetwork('force-directed defaultSpringLength=70 defaultSpringCoefficient=0.000003')
 ```
 
 **Verify the attributes of network**
@@ -124,8 +124,17 @@ layoutNetwork('force-directed')
 ``` r
 # The number of vertices and edges
 igraph::vcount(network)
-igraph::ecount(network)
+```
 
+    ## [1] 200
+
+``` r
+igraph::ecount(network)
+```
+
+    ## [1] 1227
+
+``` r
 # The names of vertices and edges
 V(network)
 E(network)
@@ -163,7 +172,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from fcb4695:
+    ## + 1/200 vertex, named, from c184f02:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -178,7 +187,7 @@ hist(deg, breaks=1:vcount(network)-1,
      xlab = "Degree")
 ```
 
-![](network_analysis_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](network_analysis_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 **Betweennes centrality**
 
