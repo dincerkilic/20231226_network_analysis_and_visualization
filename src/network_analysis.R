@@ -56,7 +56,6 @@ diameter(network)
 dist <- distances(network)
 
 # Articulation point
-## Removal of this point would destroy the whole network
 articulation.points(network)
 
 # Degree distribution
