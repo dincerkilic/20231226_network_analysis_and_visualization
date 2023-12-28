@@ -182,11 +182,16 @@ exportImage(full.path, 'PDF') #.pdf
 ```
 
 # Results
+ 
+We have a typical topology of a protein-protein interaction network (PPIN) (figure 1). The majority of nodes (proteins) in scale-free networks have only a few connections to other nodes, whereas some nodes (hubs) are connected to many other nodes in the network.
+
 ![](out/random_network_with_200_nodes.png)
 
 **Fig.1** Network analysis with 200 random nodes is presented. TP53 is colored in red and other proteins are in yellow.
 
-As a result of the analysis, we have a typical example of a protein-protein interaction network (PPIN).
+The diameter of the network appeared to be 10. This can be explained with a small-world effect meaning that there is great connectivity between proteins. In other words, it can be said that the network’s diameter (the maximum number of steps separating any two nodes) is small, no matter how big the network is.
+
+Articulation point and centrality analysis validated the importance of TP53 as a center of this network.
 
 **Track versions for records**
 
