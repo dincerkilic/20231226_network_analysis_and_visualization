@@ -74,11 +74,11 @@ clo <- closeness(network, normalized = T)
 clo[which.max(clo)]
 
 # Save the session and export
-full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
+full.path=paste(getwd(),'out/random_network_with_200_nodes',sep='/')
 saveSession(full.path) #.cys
 
 # Save image files with high resolution
-full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
+full.path=paste(getwd(),'out/random_network_with_200_nodes',sep='/')
 exportImage(full.path, 'PNG', zoom=500) #.png scaled by 500%
 exportImage(full.path, 'PDF') #.pdf
 
