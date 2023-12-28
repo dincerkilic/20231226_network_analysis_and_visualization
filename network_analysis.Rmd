@@ -105,8 +105,6 @@ E(network)
 
 The shortest distance between the two most distant nodes in the network.
 
-Protein-protein interaction networks show a small world effect meaning that there is great connectivity between proteins. In other words, it can be said that the network's diameter (the maximum number of steps separating any two nodes) is small, no matter how big the network is.
-
 ```{r}
 diameter(network)
 ```
