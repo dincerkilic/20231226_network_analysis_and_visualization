@@ -26,7 +26,6 @@ library(RCy3)
 cytoscapePing()
 
 # Create data 
-set.seed(135)
 cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=199'
 commandsRun(cmd.string)
 

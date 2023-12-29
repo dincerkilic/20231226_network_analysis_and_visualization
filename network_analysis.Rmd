@@ -62,7 +62,6 @@ There are different ways to create random data, such as by reading network data 
 I used stringApp for the given task. I extracted 199 nodes that have a connection to the TP53 protein.
 
 ```{r}
-set.seed(135)
 cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=199'
 commandsRun(cmd.string)
 ```

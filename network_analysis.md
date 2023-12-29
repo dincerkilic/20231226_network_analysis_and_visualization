@@ -70,12 +70,11 @@ I used stringApp for the given task. I extracted 199 nodes that have a
 connection to the TP53 protein.
 
 ``` r
-set.seed(135)
 cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens" limit=199'
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 1' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 2' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -166,7 +165,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 6ee0124:
+    ## + 1/200 vertex, named, from 99e71e6:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -213,7 +212,7 @@ clo <- closeness(network, normalized = T)
 clo[which.max(clo)]
 ```
 
-    ## 9606.ENSP00000478887 
+    ## 9606.ENSP00000370193 
     ##                    1
 
 **Save the session and export**
