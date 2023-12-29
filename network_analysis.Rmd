@@ -70,7 +70,7 @@ commandsRun(cmd.string)
 
 **Transfer data**
 
-The script above has created a network available on Cytoscape. Rename it on Cytopscape as "TP53", and transfer it from Cytoscape to R for the rest of the analysis.
+The script above has created a network available on Cytoscape. Transfer it from Cytoscape to R for the rest of the analysis.
 
 ```{r}
 network <- createIgraphFromNetwork()

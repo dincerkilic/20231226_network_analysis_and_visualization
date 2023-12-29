@@ -75,13 +75,12 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 1' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
-The script above has created a network available on Cytoscape. Rename it
-on Cytopscape as “TP53”, and transfer it from Cytoscape to R for the
-rest of the analysis.
+The script above has created a network available on Cytoscape. Transfer
+it from Cytoscape to R for the rest of the analysis.
 
 ``` r
 network <- createIgraphFromNetwork()
@@ -167,7 +166,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from c49b94f:
+    ## + 1/200 vertex, named, from 6ee0124:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
