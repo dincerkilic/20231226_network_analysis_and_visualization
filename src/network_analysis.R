@@ -6,10 +6,8 @@ if(!"RCy3" %in% installed.packages()){
   BiocManager::install("RCy3")
 }
 
-if(!"igraph" %in% installed.packages()){
-  install.packages("BiocManager")
-  BiocManager::install("igraph")
-}
+install.packages("igraph")
+
 
 # Prerequisites
 ## In addition to these packages (RCy3, igraph), you will need:

@@ -24,10 +24,7 @@ if(!"RCy3" %in% installed.packages()){
   BiocManager::install("RCy3")
 }
 
-if(!"igraph" %in% installed.packages()){
-  install.packages("BiocManager")
-  BiocManager::install("igraph")
-}
+install.packages("igraph")
 ```
 
 In addition to these packages (RCy3, igraph), you will need Cytoscape,
@@ -74,7 +71,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 8' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 10' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -165,7 +162,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 49a9603:
+    ## + 1/200 vertex, named, from 6e7d5c4:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -212,7 +209,7 @@ clo <- closeness(network, normalized = T)
 clo[which.max(clo)]
 ```
 
-    ## 9606.ENSP00000363124 
+    ## 9606.ENSP00000370193 
     ##                    1
 
 **Save the session and export**
