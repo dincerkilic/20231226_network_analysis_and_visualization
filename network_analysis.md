@@ -74,7 +74,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 5' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 6' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -165,7 +165,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from ce7393d:
+    ## + 1/200 vertex, named, from 10702ac:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -212,7 +212,7 @@ clo <- closeness(network, normalized = T)
 clo[which.max(clo)]
 ```
 
-    ## 9606.ENSP00000362441 
+    ## 9606.ENSP00000269305 
     ##                    1
 
 **Save the session and export**
@@ -232,7 +232,7 @@ exportImage(full.path, 'PDF') #.pdf
 
 # Results
 
-The reuslt is a typical topology of a protein-protein interaction
+The result is a typical topology of a protein-protein interaction
 network (PPIN) (figure 1). The majority of nodes (proteins) in type
 scale-free networks have only a few connections to other nodes, whereas
 some nodes (hubs) are connected to many other nodes in the network.
