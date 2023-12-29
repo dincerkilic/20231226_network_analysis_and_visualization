@@ -74,7 +74,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 2' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 5' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -165,7 +165,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 99e71e6:
+    ## + 1/200 vertex, named, from ce7393d:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -212,7 +212,7 @@ clo <- closeness(network, normalized = T)
 clo[which.max(clo)]
 ```
 
-    ## 9606.ENSP00000370193 
+    ## 9606.ENSP00000362441 
     ##                    1
 
 **Save the session and export**
@@ -232,10 +232,10 @@ exportImage(full.path, 'PDF') #.pdf
 
 # Results
 
-We have a typical topology of a protein-protein interaction network
-(PPIN) (figure 1). The majority of nodes (proteins) in scale-free
-networks have only a few connections to other nodes, whereas some nodes
-(hubs) are connected to many other nodes in the network.
+The reuslt is a typical topology of a protein-protein interaction
+network (PPIN) (figure 1). The majority of nodes (proteins) in type
+scale-free networks have only a few connections to other nodes, whereas
+some nodes (hubs) are connected to many other nodes in the network.
 
 ![](out/random_network_with_200_nodes.png)
 
@@ -243,7 +243,7 @@ networks have only a few connections to other nodes, whereas some nodes
 colored in red and other proteins are in yellow.
 
 Furthermore, the diameter of the network appeared to be 10. This can be
-explained with a small-world effect in PPINs meaning that there is great
+explained with a small-world effect in PPINs, meaning there is great
 connectivity between proteins. In other words, the network’s diameter
 (the maximum number of steps separating any two nodes) is small, no
 matter how big the network is.
