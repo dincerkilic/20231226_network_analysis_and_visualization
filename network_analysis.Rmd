@@ -73,7 +73,7 @@ commandsRun(cmd.string)
 The script above has created a network available on Cytoscape. Rename it on Cytopscape as "TP53", and transfer it from Cytoscape to R for the rest of the analysis.
 
 ```{r}
-network <- createIgraphFromNetwork("TP53")
+network <- createIgraphFromNetwork()
 ```
 
 **Decide the layout**

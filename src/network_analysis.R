@@ -31,7 +31,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 
 # Transfer network from Cytoscape to R after renaming it on Cytoscape
-network <- createIgraphFromNetwork("TP53")
+network <- createIgraphFromNetwork()
 
 # Decide the layout
 ## A list of available layouts
@@ -74,11 +74,11 @@ clo <- closeness(network, normalized = T)
 clo[which.max(clo)]
 
 # Save the session and export
-full.path=paste(getwd(),'out/random_network_with_200_nodes',sep='/')
+full.path=paste(getwd(),'../out/random_network_with_200_nodes',sep='/')
 saveSession(full.path) #.cys
 
 # Save image files with high resolution
-full.path=paste(getwd(),'out/random_network_with_200_nodes',sep='/')
+full.path=paste(getwd(),'../out/random_network_with_200_nodes',sep='/')
 exportImage(full.path, 'PNG', zoom=500) #.png scaled by 500%
 exportImage(full.path, 'PDF') #.pdf
 
