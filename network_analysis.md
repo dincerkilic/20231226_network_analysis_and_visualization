@@ -71,7 +71,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 10' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 11' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -162,7 +162,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 6e7d5c4:
+    ## + 1/200 vertex, named, from bbabf21:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -209,7 +209,7 @@ clo <- closeness(network, normalized = T)
 clo[which.max(clo)]
 ```
 
-    ## 9606.ENSP00000370193 
+    ## 9606.ENSP00000269305 
     ##                    1
 
 **Save the session and export**
