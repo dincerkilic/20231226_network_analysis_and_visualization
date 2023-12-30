@@ -180,7 +180,7 @@ The result is a typical topology of a protein-protein interaction network (PPIN)
 
 **Fig.1** Network analysis with 200 random nodes is presented. TP53 is colored in red and other proteins are in yellow.
 
-Furthermore, the diameter of the network appeared to be 10. This can be explained with a small-world effect in PPINs, meaning there is great connectivity between proteins. In other words, the network’s diameter (the maximum number of steps separating any two nodes) is small, no matter how big the network is.
+Furthermore, the diameter of the network appeared to be 10. This can be explained with a small-world effect in PPINs, meaning there is great connectivity between proteins. In other words, the network’s diameter is small, no matter how big the network is.
 
 Finally, articulation point and centrality analysis validated the importance of TP53 as the center of this network.
 
