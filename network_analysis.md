@@ -38,9 +38,8 @@ Install the STRING app from <https://apps.cytoscape.org/apps/stringapp>.
 **Cytoscape** allows visualization and exploration of biological
 networks.
 
-**stringApp** imports functional associations or physical interactions
-between protein-protein and protein-chemical pairs from several
-databases into Cytoscape.
+**stringApp** enables you to import protein-protein interaction networks
+from several databases into Cytoscape.
 
 **Load the libraries on R**
 
@@ -71,7 +70,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 4' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 5' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -148,7 +147,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 72928a5:
+    ## + 1/200 vertex, named, from eeba523:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -167,11 +166,12 @@ hist(deg, breaks=1:vcount(network)-1,
 
 **Betweennes centrality**
 
-Betweenness centrality captures which nodes are important in the flow of
-the network. Betweenness effectively counts how many shortest paths each
-node is on then divides it by the total number of shortest paths.
+Thanks to betweenness centrality, one can find which nodes are important
+in the flow of the network. Betweenness effectively counts how many
+shortest paths each node is on then divides it by the total number of
+shortest paths.
 
-The higher a node’s betweenness, the more important they are for the
+The higher a betweenness score means the node is important for the
 efficient flow of goods in a network.
 
 ``` r
@@ -195,7 +195,7 @@ clo <- closeness(network, normalized = T)
 clo[which.max(clo)]
 ```
 
-    ## 9606.ENSP00000269305 
+    ## 9606.ENSP00000370193 
     ##                    1
 
 **Save the session and export**
@@ -227,8 +227,8 @@ colored in red and other proteins are in yellow.
 
 Furthermore, the diameter of the network appeared to be 10. This can be
 explained with a small-world effect in PPINs, meaning there is great
-connectivity between proteins. In other words, the network’s diameter is
-small, no matter how big the network is.
+connectivity between proteins. In other words, the diameter of the
+network will be small, no matter how big the network is.
 
 Finally, articulation point and centrality analysis validated the
 importance of TP53 as the center of this network.
