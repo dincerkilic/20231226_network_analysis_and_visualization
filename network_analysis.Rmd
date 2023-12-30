@@ -78,9 +78,8 @@ network <- createIgraphFromNetwork()
 # A list of available layouts
 getLayoutNames()
 
-# Select the “force-directed” layout. To see properties for the given layout, use:
-getLayoutPropertyNames("force-directed") 
-layoutNetwork('force-directed defaultSpringLength=70 defaultSpringCoefficient=0.000003')
+# Select the “force-directed” layout
+layoutNetwork('force-directed')
 ```
 
 **Verify the attributes of network**
@@ -168,7 +167,7 @@ saveSession(full.path) #.cys
 **Save image files with high resolution**
 
 ```{r,  eval=FALSE}
-full.path=paste(getwd(),'out/random_network_with_200_nodes',sep='/')
+full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
 exportImage(full.path, 'PNG', zoom=500) #.png scaled by 500%
 exportImage(full.path, 'PDF') #.pdf
 ```

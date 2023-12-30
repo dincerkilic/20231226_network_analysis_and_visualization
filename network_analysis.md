@@ -71,7 +71,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 11' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 1' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -96,22 +96,8 @@ getLayoutNames()
     ## [13] "isom"
 
 ``` r
-# Select the “force-directed” layout. To see properties for the given layout, use:
-getLayoutPropertyNames("force-directed") 
-```
-
-    ## [1] "Available arguments for 'layout force-directed':"
-
-    ##  [1] "defaultEdgeWeight"        "defaultNodeMass"         
-    ##  [3] "defaultSpringCoefficient" "defaultSpringLength"     
-    ##  [5] "edgeAttribute"            "isDeterministic"         
-    ##  [7] "maxWeightCutoff"          "minWeightCutoff"         
-    ##  [9] "network"                  "nodeAttribute"           
-    ## [11] "nodeList"                 "numIterations"           
-    ## [13] "singlePartition"          "type"
-
-``` r
-layoutNetwork('force-directed defaultSpringLength=70 defaultSpringCoefficient=0.000003')
+# Select the “force-directed” layout
+layoutNetwork('force-directed')
 ```
 
 **Verify the attributes of network**
@@ -162,7 +148,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from bbabf21:
+    ## + 1/200 vertex, named, from 5142b6a:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -222,7 +208,7 @@ saveSession(full.path) #.cys
 **Save image files with high resolution**
 
 ``` r
-full.path=paste(getwd(),'out/random_network_with_200_nodes',sep='/')
+full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
 exportImage(full.path, 'PNG', zoom=500) #.png scaled by 500%
 exportImage(full.path, 'PDF') #.pdf
 ```
