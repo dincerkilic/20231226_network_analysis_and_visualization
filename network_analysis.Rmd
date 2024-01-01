@@ -13,7 +13,7 @@ The aim is to make a network analysis with 200 random nodes.
 
 **Prerequisites**
 
-First you need to set up your R environment. Install the required R packages, which are igraph and RCy3.
+First I need to set up my R environment. Install the required R packages, which are igraph and RCy3.
 
 **igraph** is a collection of network analysis tools.
 
@@ -29,7 +29,7 @@ install.packages("igraph")
 ```
 
 
-In addition to these packages (RCy3, igraph), you will need Cytoscape, which can be downloaded from http://www.cytoscape.org/download.php.
+In addition to these packages (RCy3, igraph), I will need Cytoscape, which can be downloaded from http://www.cytoscape.org/download.php.
 
 There is also a need for the STRING app to access the STRING database from within Cytoscape.
 
