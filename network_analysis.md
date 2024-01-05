@@ -71,7 +71,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 6' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 2' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -148,7 +148,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from 8a0a975:
+    ## + 1/200 vertex, named, from cc55355:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -209,7 +209,7 @@ saveSession(full.path) #.cys
 **Save image files with high resolution**
 
 ``` r
-full.path=paste(getwd(),'random_network_with_200_nodes',sep='/')
+full.path=paste(getwd(),'out/random_network_with_200_nodes',sep='/')
 exportImage(full.path, 'PNG', zoom=500) #.png scaled by 500%
 exportImage(full.path, 'PDF') #.pdf
 ```
