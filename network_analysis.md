@@ -71,7 +71,7 @@ cmd.string = 'string protein query query="TP53" cutoff=0.9 species="Homo sapiens
 commandsRun(cmd.string)
 ```
 
-    ## [1] "Loaded network 'STRING network - TP53 - 2' with 200 nodes and 1227 edges"
+    ## [1] "Loaded network 'STRING network - TP53 - 3' with 200 nodes and 1227 edges"
 
 **Transfer data**
 
@@ -148,7 +148,7 @@ Removal of this point would destroy the whole network.
 articulation.points(network)
 ```
 
-    ## + 1/200 vertex, named, from cc55355:
+    ## + 1/200 vertex, named, from 299620a:
     ## [1] 9606.ENSP00000269305
 
 **Degree centrality and degree distribution**
@@ -157,6 +157,13 @@ The degree tells us the number of edges that connect to a node.
 
 ``` r
 deg <- degree(network, mode="all")
+deg[which.max(deg)]
+```
+
+    ## 9606.ENSP00000269305 
+    ##                  199
+
+``` r
 hist(deg, breaks=1:vcount(network)-1, 
      ylim = range(pretty(c(0,table(deg)))),
      main="Histogram of Node Degree",

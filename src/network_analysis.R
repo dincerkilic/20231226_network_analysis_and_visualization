@@ -56,6 +56,7 @@ articulation.points(network)
 
 # Degree distribution
 deg <- degree(network, mode="all")
+deg[which.max(deg)]
 hist(deg, breaks=1:vcount(network)-1, 
      ylim = range(pretty(c(0,table(deg)))),
      main="Histogram of Node Degree",
